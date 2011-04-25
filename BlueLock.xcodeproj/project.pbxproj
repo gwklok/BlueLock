@@ -17,6 +17,7 @@
 		EC8F977C136514D800D9C805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8F977A136514D800D9C805 /* InfoPlist.strings */; };
 		EC8F977F136514D800D9C805 /* BlueLockTests.h in Resources */ = {isa = PBXBuildFile; fileRef = EC8F977E136514D800D9C805 /* BlueLockTests.h */; };
 		EC8F9781136514D800D9C805 /* BlueLockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F9780136514D800D9C805 /* BlueLockTests.m */; };
+		EC8F978C13651EF300D9C805 /* BLPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F978B13651EF300D9C805 /* BLPreferencesController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +36,22 @@
 		EC8F9759136514D700D9C805 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EC8F975A136514D700D9C805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EC8F975B136514D700D9C805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EC8F975E136514D700D9C805 /* BlueLock-Info.plist */ = {isa = PBXFileReference; path = "BlueLock-Info.plist"; sourceTree = "<group>"; };
+		EC8F975E136514D700D9C805 /* BlueLock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlueLock-Info.plist"; sourceTree = "<group>"; };
 		EC8F9760136514D700D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EC8F9762136514D700D9C805 /* BlueLock-Prefix.pch */ = {isa = PBXFileReference; path = "BlueLock-Prefix.pch"; sourceTree = "<group>"; };
+		EC8F9762136514D700D9C805 /* BlueLock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlueLock-Prefix.pch"; sourceTree = "<group>"; };
 		EC8F9763136514D700D9C805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC8F9766136514D700D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		EC8F9768136514D700D9C805 /* BlueLockAppDelegate.h */ = {isa = PBXFileReference; path = BlueLockAppDelegate.h; sourceTree = "<group>"; };
+		EC8F9768136514D700D9C805 /* BlueLockAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueLockAppDelegate.h; sourceTree = "<group>"; };
 		EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueLockAppDelegate.m; sourceTree = "<group>"; };
 		EC8F976C136514D800D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EC8F9773136514D800D9C805 /* BlueLockTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueLockTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC8F9779136514D800D9C805 /* BlueLockTests-Info.plist */ = {isa = PBXFileReference; path = "BlueLockTests-Info.plist"; sourceTree = "<group>"; };
+		EC8F9779136514D800D9C805 /* BlueLockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlueLockTests-Info.plist"; sourceTree = "<group>"; };
 		EC8F977B136514D800D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EC8F977D136514D800D9C805 /* BlueLockTests-Prefix.pch */ = {isa = PBXFileReference; path = "BlueLockTests-Prefix.pch"; sourceTree = "<group>"; };
+		EC8F977D136514D800D9C805 /* BlueLockTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlueLockTests-Prefix.pch"; sourceTree = "<group>"; };
 		EC8F977E136514D800D9C805 /* BlueLockTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueLockTests.h; sourceTree = "<group>"; };
 		EC8F9780136514D800D9C805 /* BlueLockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueLockTests.m; sourceTree = "<group>"; };
+		EC8F978A13651EF300D9C805 /* BLPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLPreferencesController.h; sourceTree = "<group>"; };
+		EC8F978B13651EF300D9C805 /* BLPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLPreferencesController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */,
 				EC8F976B136514D800D9C805 /* MainMenu.xib */,
 				EC8F975D136514D700D9C805 /* Supporting Files */,
+				EC8F978A13651EF300D9C805 /* BLPreferencesController.h */,
+				EC8F978B13651EF300D9C805 /* BLPreferencesController.m */,
 			);
 			path = BlueLock;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			files = (
 				EC8F9764136514D700D9C805 /* main.m in Sources */,
 				EC8F976A136514D700D9C805 /* BlueLockAppDelegate.m in Sources */,
+				EC8F978C13651EF300D9C805 /* BLPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

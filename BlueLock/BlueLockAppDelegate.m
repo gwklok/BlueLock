@@ -17,4 +17,13 @@
     // Insert code here to initialize your application
 }
 
+- (void)awakeFromNib
+{
+    statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+    [statusItem setMenu:statusMenu];
+    [statusItem setTitle:@"BL"];
+    [statusItem setHighlightMode:YES];
+    
+}
+
 @end
