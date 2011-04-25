@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC8F9757136514D700D9C805 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8F9756136514D700D9C805 /* Cocoa.framework */; };
+		EC8F9761136514D700D9C805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8F975F136514D700D9C805 /* InfoPlist.strings */; };
+		EC8F9764136514D700D9C805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F9763136514D700D9C805 /* main.m */; };
+		EC8F9767136514D700D9C805 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC8F9765136514D700D9C805 /* Credits.rtf */; };
+		EC8F976A136514D700D9C805 /* BlueLockAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */; };
+		EC8F976D136514D800D9C805 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8F976B136514D800D9C805 /* MainMenu.xib */; };
+		EC8F9774136514D800D9C805 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8F9756136514D700D9C805 /* Cocoa.framework */; };
+		EC8F977C136514D800D9C805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8F977A136514D800D9C805 /* InfoPlist.strings */; };
+		EC8F977F136514D800D9C805 /* BlueLockTests.h in Resources */ = {isa = PBXBuildFile; fileRef = EC8F977E136514D800D9C805 /* BlueLockTests.h */; };
+		EC8F9781136514D800D9C805 /* BlueLockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F9780136514D800D9C805 /* BlueLockTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC8F9775136514D800D9C805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8F9749136514D700D9C805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8F9751136514D700D9C805;
+			remoteInfo = BlueLock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC8F9752136514D700D9C805 /* BlueLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8F9756136514D700D9C805 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EC8F9759136514D700D9C805 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EC8F975A136514D700D9C805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC8F975B136514D700D9C805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC8F975E136514D700D9C805 /* BlueLock-Info.plist */ = {isa = PBXFileReference; path = "BlueLock-Info.plist"; sourceTree = "<group>"; };
+		EC8F9760136514D700D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC8F9762136514D700D9C805 /* BlueLock-Prefix.pch */ = {isa = PBXFileReference; path = "BlueLock-Prefix.pch"; sourceTree = "<group>"; };
+		EC8F9763136514D700D9C805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC8F9766136514D700D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EC8F9768136514D700D9C805 /* BlueLockAppDelegate.h */ = {isa = PBXFileReference; path = BlueLockAppDelegate.h; sourceTree = "<group>"; };
+		EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueLockAppDelegate.m; sourceTree = "<group>"; };
+		EC8F976C136514D800D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EC8F9773136514D800D9C805 /* BlueLockTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueLockTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8F9779136514D800D9C805 /* BlueLockTests-Info.plist */ = {isa = PBXFileReference; path = "BlueLockTests-Info.plist"; sourceTree = "<group>"; };
+		EC8F977B136514D800D9C805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC8F977D136514D800D9C805 /* BlueLockTests-Prefix.pch */ = {isa = PBXFileReference; path = "BlueLockTests-Prefix.pch"; sourceTree = "<group>"; };
+		EC8F977E136514D800D9C805 /* BlueLockTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueLockTests.h; sourceTree = "<group>"; };
+		EC8F9780136514D800D9C805 /* BlueLockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueLockTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC8F974F136514D700D9C805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F9757136514D700D9C805 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8F976F136514D800D9C805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F9774136514D800D9C805 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC8F9747136514D700D9C805 = {
+			isa = PBXGroup;
+			children = (
+				EC8F975C136514D700D9C805 /* BlueLock */,
+				EC8F9777136514D800D9C805 /* BlueLockTests */,
+				EC8F9755136514D700D9C805 /* Frameworks */,
+				EC8F9753136514D700D9C805 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC8F9753136514D700D9C805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F9752136514D700D9C805 /* BlueLock.app */,
+				EC8F9773136514D800D9C805 /* BlueLockTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC8F9755136514D700D9C805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F9756136514D700D9C805 /* Cocoa.framework */,
+				EC8F9758136514D700D9C805 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC8F9758136514D700D9C805 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F9759136514D700D9C805 /* AppKit.framework */,
+				EC8F975A136514D700D9C805 /* CoreData.framework */,
+				EC8F975B136514D700D9C805 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EC8F975C136514D700D9C805 /* BlueLock */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F9768136514D700D9C805 /* BlueLockAppDelegate.h */,
+				EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */,
+				EC8F976B136514D800D9C805 /* MainMenu.xib */,
+				EC8F975D136514D700D9C805 /* Supporting Files */,
+			);
+			path = BlueLock;
+			sourceTree = "<group>";
+		};
+		EC8F975D136514D700D9C805 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F975E136514D700D9C805 /* BlueLock-Info.plist */,
+				EC8F975F136514D700D9C805 /* InfoPlist.strings */,
+				EC8F9762136514D700D9C805 /* BlueLock-Prefix.pch */,
+				EC8F9763136514D700D9C805 /* main.m */,
+				EC8F9765136514D700D9C805 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC8F9777136514D800D9C805 /* BlueLockTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F977E136514D800D9C805 /* BlueLockTests.h */,
+				EC8F9780136514D800D9C805 /* BlueLockTests.m */,
+				EC8F9778136514D800D9C805 /* Supporting Files */,
+			);
+			path = BlueLockTests;
+			sourceTree = "<group>";
+		};
+		EC8F9778136514D800D9C805 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC8F9779136514D800D9C805 /* BlueLockTests-Info.plist */,
+				EC8F977A136514D800D9C805 /* InfoPlist.strings */,
+				EC8F977D136514D800D9C805 /* BlueLockTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC8F9751136514D700D9C805 /* BlueLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8F9784136514D800D9C805 /* Build configuration list for PBXNativeTarget "BlueLock" */;
+			buildPhases = (
+				EC8F974E136514D700D9C805 /* Sources */,
+				EC8F974F136514D700D9C805 /* Frameworks */,
+				EC8F9750136514D700D9C805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueLock;
+			productName = BlueLock;
+			productReference = EC8F9752136514D700D9C805 /* BlueLock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC8F9772136514D800D9C805 /* BlueLockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8F9787136514D800D9C805 /* Build configuration list for PBXNativeTarget "BlueLockTests" */;
+			buildPhases = (
+				EC8F976E136514D800D9C805 /* Sources */,
+				EC8F976F136514D800D9C805 /* Frameworks */,
+				EC8F9770136514D800D9C805 /* Resources */,
+				EC8F9771136514D800D9C805 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC8F9776136514D800D9C805 /* PBXTargetDependency */,
+			);
+			name = BlueLockTests;
+			productName = BlueLockTests;
+			productReference = EC8F9773136514D800D9C805 /* BlueLockTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC8F9749136514D700D9C805 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = EC8F974C136514D700D9C805 /* Build configuration list for PBXProject "BlueLock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC8F9747136514D700D9C805;
+			productRefGroup = EC8F9753136514D700D9C805 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC8F9751136514D700D9C805 /* BlueLock */,
+				EC8F9772136514D800D9C805 /* BlueLockTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC8F9750136514D700D9C805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F9761136514D700D9C805 /* InfoPlist.strings in Resources */,
+				EC8F9767136514D700D9C805 /* Credits.rtf in Resources */,
+				EC8F976D136514D800D9C805 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8F9770136514D800D9C805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F977C136514D800D9C805 /* InfoPlist.strings in Resources */,
+				EC8F977F136514D800D9C805 /* BlueLockTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EC8F9771136514D800D9C805 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC8F974E136514D700D9C805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F9764136514D700D9C805 /* main.m in Sources */,
+				EC8F976A136514D700D9C805 /* BlueLockAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8F976E136514D800D9C805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8F9781136514D800D9C805 /* BlueLockTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC8F9776136514D800D9C805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC8F9751136514D700D9C805 /* BlueLock */;
+			targetProxy = EC8F9775136514D800D9C805 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC8F975F136514D700D9C805 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8F9760136514D700D9C805 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC8F9765136514D700D9C805 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8F9766136514D700D9C805 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EC8F976B136514D800D9C805 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8F976C136514D800D9C805 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		EC8F977A136514D800D9C805 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC8F977B136514D800D9C805 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC8F9782136514D800D9C805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EC8F9783136514D800D9C805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EC8F9785136514D800D9C805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueLock/BlueLock-Prefix.pch";
+				INFOPLIST_FILE = "BlueLock/BlueLock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC8F9786136514D800D9C805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueLock/BlueLock-Prefix.pch";
+				INFOPLIST_FILE = "BlueLock/BlueLock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EC8F9788136514D800D9C805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueLock.app/Contents/MacOS/BlueLock";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueLockTests/BlueLockTests-Prefix.pch";
+				INFOPLIST_FILE = "BlueLockTests/BlueLockTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EC8F9789136514D800D9C805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueLock.app/Contents/MacOS/BlueLock";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueLockTests/BlueLockTests-Prefix.pch";
+				INFOPLIST_FILE = "BlueLockTests/BlueLockTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC8F974C136514D700D9C805 /* Build configuration list for PBXProject "BlueLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8F9782136514D800D9C805 /* Debug */,
+				EC8F9783136514D800D9C805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8F9784136514D800D9C805 /* Build configuration list for PBXNativeTarget "BlueLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8F9785136514D800D9C805 /* Debug */,
+				EC8F9786136514D800D9C805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC8F9787136514D800D9C805 /* Build configuration list for PBXNativeTarget "BlueLockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8F9788136514D800D9C805 /* Debug */,
+				EC8F9789136514D800D9C805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC8F9749136514D700D9C805 /* Project object */;
+}
