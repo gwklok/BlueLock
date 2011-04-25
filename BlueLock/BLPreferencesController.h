@@ -2,15 +2,22 @@
 //  BLPreferencesController.h
 //  BlueLock
 //
-//  Created by Gordon Willem Klok on 4/24/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Gordon Willem Klok. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+@class BLServiceController;
 
-
-@interface BLPreferencesController : NSObject {
-    
+@interface BLPreferencesController : NSWindowController {
+    IBOutlet NSWindow *window;
+    IBOutlet NSTextField *deviceLabel;
+    IBOutlet NSButton *onOffButton;
+    IBOutlet NSButton *changeDeviceButton;
+    IBOutlet NSSlider *timeTillLockSlider;
+    BLServiceController *servControl;
 }
+
+- (IBAction)changeDevice:(id) sender;
+- (IBAction)onOff:(id) sender;
 
 @end

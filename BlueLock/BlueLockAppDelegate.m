@@ -2,13 +2,13 @@
 //  BlueLockAppDelegate.m
 //  BlueLock
 //
-//  Created by Gordon Willem Klok on 4/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "BlueLockAppDelegate.h"
 
 @implementation BlueLockAppDelegate
+#import "BLPreferencesController.h"
 
 @synthesize window;
 
@@ -23,6 +23,17 @@
     [statusItem setMenu:statusMenu];
     [statusItem setTitle:@"BL"];
     [statusItem setHighlightMode:YES];
+    
+}
+
+- (IBAction) changePreferences:(id) sender
+{
+    if (!preferencesController) {
+        NSLog(@"alloc");
+         preferencesController = [[BLPreferencesController alloc] init];
+    }
+    
+    [preferencesController showWindow:self];
     
 }
 
