@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC710124136524F400729027 /* BLPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC710123136524F400729027 /* BLPreferencesWindow.xib */; };
+		EC7101311365481000729027 /* BLServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7101301365481000729027 /* BLServiceController.m */; };
+		EC710135136548DA00729027 /* HIDIdleTime.m in Sources */ = {isa = PBXBuildFile; fileRef = EC710132136548DA00729027 /* HIDIdleTime.m */; };
+		EC71013713654BFB00729027 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71013613654BFB00729027 /* IOBluetooth.framework */; };
+		EC71013913654C0400729027 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71013813654C0400729027 /* IOBluetoothUI.framework */; };
+		EC71013B13654C1100729027 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71013A13654C1100729027 /* ScreenSaver.framework */; };
+		EC71013D13654C3500729027 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71013C13654C3500729027 /* IOKit.framework */; };
 		EC8F9757136514D700D9C805 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8F9756136514D700D9C805 /* Cocoa.framework */; };
 		EC8F9761136514D700D9C805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC8F975F136514D700D9C805 /* InfoPlist.strings */; };
 		EC8F9764136514D700D9C805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F9763136514D700D9C805 /* main.m */; };
@@ -31,6 +38,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC710123136524F400729027 /* BLPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLPreferencesWindow.xib; sourceTree = "<group>"; };
+		EC71012F1365481000729027 /* BLServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLServiceController.h; sourceTree = "<group>"; };
+		EC7101301365481000729027 /* BLServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLServiceController.m; sourceTree = "<group>"; };
+		EC710132136548DA00729027 /* HIDIdleTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDIdleTime.m; sourceTree = SOURCE_ROOT; };
+		EC710133136548DA00729027 /* HIDIdleTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDIdleTime.h; sourceTree = SOURCE_ROOT; };
+		EC710134136548DA00729027 /* ScreenSaverControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenSaverControl.h; sourceTree = SOURCE_ROOT; };
+		EC71013613654BFB00729027 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		EC71013813654C0400729027 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
+		EC71013A13654C1100729027 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
+		EC71013C13654C3500729027 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		EC8F9752136514D700D9C805 /* BlueLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8F9756136514D700D9C805 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC8F9759136514D700D9C805 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,6 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC71013D13654C3500729027 /* IOKit.framework in Frameworks */,
+				EC71013B13654C1100729027 /* ScreenSaver.framework in Frameworks */,
+				EC71013913654C0400729027 /* IOBluetoothUI.framework in Frameworks */,
+				EC71013713654BFB00729027 /* IOBluetooth.framework in Frameworks */,
 				EC8F9757136514D700D9C805 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +98,10 @@
 		EC8F9747136514D700D9C805 = {
 			isa = PBXGroup;
 			children = (
+				EC71013C13654C3500729027 /* IOKit.framework */,
+				EC71013A13654C1100729027 /* ScreenSaver.framework */,
+				EC71013813654C0400729027 /* IOBluetoothUI.framework */,
+				EC71013613654BFB00729027 /* IOBluetooth.framework */,
 				EC8F975C136514D700D9C805 /* BlueLock */,
 				EC8F9777136514D800D9C805 /* BlueLockTests */,
 				EC8F9755136514D700D9C805 /* Frameworks */,
@@ -121,6 +146,8 @@
 				EC8F975D136514D700D9C805 /* Supporting Files */,
 				EC8F978A13651EF300D9C805 /* BLPreferencesController.h */,
 				EC8F978B13651EF300D9C805 /* BLPreferencesController.m */,
+				EC71012F1365481000729027 /* BLServiceController.h */,
+				EC7101301365481000729027 /* BLServiceController.m */,
 			);
 			path = BlueLock;
 			sourceTree = "<group>";
@@ -133,6 +160,10 @@
 				EC8F9762136514D700D9C805 /* BlueLock-Prefix.pch */,
 				EC8F9763136514D700D9C805 /* main.m */,
 				EC8F9765136514D700D9C805 /* Credits.rtf */,
+				EC710123136524F400729027 /* BLPreferencesWindow.xib */,
+				EC710132136548DA00729027 /* HIDIdleTime.m */,
+				EC710133136548DA00729027 /* HIDIdleTime.h */,
+				EC710134136548DA00729027 /* ScreenSaverControl.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -227,6 +258,7 @@
 				EC8F9761136514D700D9C805 /* InfoPlist.strings in Resources */,
 				EC8F9767136514D700D9C805 /* Credits.rtf in Resources */,
 				EC8F976D136514D800D9C805 /* MainMenu.xib in Resources */,
+				EC710124136524F400729027 /* BLPreferencesWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +297,8 @@
 				EC8F9764136514D700D9C805 /* main.m in Sources */,
 				EC8F976A136514D700D9C805 /* BlueLockAppDelegate.m in Sources */,
 				EC8F978C13651EF300D9C805 /* BLPreferencesController.m in Sources */,
+				EC7101311365481000729027 /* BLServiceController.m in Sources */,
+				EC710135136548DA00729027 /* HIDIdleTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +481,7 @@
 				EC8F9786136514D800D9C805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC8F9787136514D800D9C805 /* Build configuration list for PBXNativeTarget "BlueLockTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +490,7 @@
 				EC8F9789136514D800D9C805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
