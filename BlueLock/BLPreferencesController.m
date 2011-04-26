@@ -75,7 +75,6 @@
         
         if (device_id != NULL) {
             if ([deviceAddr isEqualToString:device_id]) {
-                printf("found my target device\n");
                 [devicePopup selectItemAtIndex:i];
             }
         }
@@ -113,13 +112,11 @@
     NSInteger ttl; 
     ttl = [timeTillLockSlider integerValue];
     [servControl setLockScreenAfterSecondsDisconnected:ttl];
-    NSLog(@"timeTillLockChanged");
     [secondsIndicator setIntegerValue:ttl];
 }
 
 - (IBAction)changeDevice:(id) sender
 {
-    NSLog(@"change device");
     NSInteger which;
     IOBluetoothDevice *currentDevice, *selectedDevice;
     
@@ -129,10 +126,7 @@
     NSString *curDeviceID, *selDeviceID;
     curDeviceID = [[currentDevice getAddressString] uppercaseString];
     selDeviceID = [[selectedDevice getAddressString] uppercaseString];
-    if ([curDeviceID isEqualToString:selDeviceID]) {
-        NSLog(@"same device doing nothing");
-    } else {
-        NSLog(@"New device %@", [selectedDevice getAddressString]);
+    if (![curDeviceID isEqualToString:selDeviceID]) {
         [servControl setDeviceOfInterest:selectedDevice];
     }
 }
@@ -142,10 +136,8 @@
     if ([servControl isEnabled]) {
         [onOffButton setTitle:@"Off"];
         [servControl disable];
-        NSLog(@"am on");
     } else {
         [onOffButton setTitle:@"On"];
-        NSLog(@"am off");
         [servControl enable];
     }
 

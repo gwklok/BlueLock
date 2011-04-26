@@ -33,7 +33,7 @@
         
         ssControl = [[ScreenSaverController controller] retain];
         if (!ssControl) {
-            NSLog(@"Couldn't acquire screen saver controller!");
+            return nil;
         }
                     
     
@@ -67,7 +67,6 @@
                 NSString * foo = [[device getAddressString] uppercaseString];
                         
                 if ([foo isEqualToString:device_id]) {
-                    printf("found my target device\n");
                     targetDevice = device;
                     break;
                 }
@@ -95,7 +94,6 @@
 - (void)disable
 {
     currentlyRunning = NO;
-    NSLog(@"disable called");
     [connectionThread cancel];
     [defaults setDouble:NO forKey:@"currentlyRunning"];
     [defaults synchronize];
@@ -104,7 +102,6 @@
 
 - (void)enable
 {
-    NSLog(@"enable called");
     if (connectionThread == nil || [connectionThread isCancelled]) {
         connectionThread = [[NSThread alloc] initWithTarget:self 
                                                    selector:@selector(threadSetup) object:nil];
@@ -132,7 +129,6 @@
 
 - (void)handleTimer:(NSTimer *)t
 {
-    NSLog(@"called");
     
     if ([[NSThread currentThread] isCancelled]) {
         [timer invalidate];
@@ -142,21 +138,21 @@
     }
     
     if (![self check_connect]) {
-        NSLog(@"not connected");
+        // NSLog(@"not connected");
         if (lastDeviceConnect != nil) {
             NSTimeInterval timeInterval = [lastDeviceConnect timeIntervalSinceNow];
-            NSLog([NSString stringWithFormat:@"Elapsed time: %f", timeInterval]);
-            NSLog([NSString stringWithFormat:@"lockScreenAfterSecondsDisconnected: %ld", lockScreenAfterSecondsDisconnected]);
+            //NSLog([NSString stringWithFormat:@"Elapsed time: %f", timeInterval]);
+            //NSLog([NSString stringWithFormat:@"lockScreenAfterSecondsDisconnected: %ld",lockScreenAfterSecondsDisconnected]);
             if (![ssControl screenSaverIsRunning]) {
                 int idleTime = [idleTimer idleTimeInSeconds];
-                NSLog (@"idle time in seconds: %i", idleTime);
+                //NSLog (@"idle time in seconds: %i", idleTime);
                 
                 if (fabs(timeInterval) > lockScreenAfterSecondsDisconnected) {
                     if (idleTime > lockScreenAfterSecondsDisconnected ) {
-                        NSLog(@"Locking Screen");
+                        //NSLog(@"Locking Screen");
                         [ssControl screenSaverStartNow];
                     } else {
-                        NSLog(@"Would have locked screen but the user is still around");
+                        //NSLog(@"Would have locked screen but the user is still around");
                     }
                 }
             }
@@ -169,7 +165,6 @@
         
         lastDeviceConnect = [[NSDate alloc] init];
         [lastDeviceConnect retain];
-        printf("connected\n");
     }
 }
 
@@ -201,7 +196,6 @@
     [defaults setInteger:seconds forKey:@"lockScreenAfterSecondsDisconnected"];
     [defaults synchronize];
     lockScreenAfterSecondsDisconnected = seconds;
-    NSLog(@"set lockScreenAfterSecondsDisconnected(%ld)", seconds); 
 }
 
 @synthesize lockScreenAfterSecondsDisconnected;

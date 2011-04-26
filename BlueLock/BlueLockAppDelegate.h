@@ -26,9 +26,11 @@ BLServiceController *servControl;
     IBOutlet NSMenu *statusMenu;
     NSStatusItem * statusItem;
     BLPreferencesController * preferencesController;
+    IBOutlet NSMenuItem *enableOrDisable;
 }
 
 - (IBAction)changePreferences:(id) sender;
+- (IBAction) enableOrDisableAction:(id) sender;
 
 @property (assign) IBOutlet NSWindow *window;
 

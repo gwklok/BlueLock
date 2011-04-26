@@ -36,17 +36,32 @@
     [statusItem setHighlightMode:YES];
     servControl = [[BLServiceController alloc] init];
     [servControl retain];
+    if ([servControl isEnabled]) {
+        [enableOrDisable setTitle:@"Disable"];
+    } else {
+        [enableOrDisable setTitle:@"Enable"];
+    }
 }
 
 - (IBAction) changePreferences:(id) sender
 {
     if (!preferencesController) {
-        NSLog(@"alloc");
          preferencesController = [[BLPreferencesController alloc] init];
     }
     
     [preferencesController showWindow:self];
     
+}
+
+- (IBAction) enableOrDisableAction:(id) sender
+{
+    if ([servControl isEnabled]) {
+        [servControl disable];
+        [enableOrDisable setTitle:@"Enable"];
+    } else {
+        [servControl enable];
+        [enableOrDisable setTitle:@"Disable"];
+    }
 }
 
 @end
