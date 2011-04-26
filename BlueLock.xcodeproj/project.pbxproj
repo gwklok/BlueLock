@@ -143,11 +143,14 @@
 				EC8F9768136514D700D9C805 /* BlueLockAppDelegate.h */,
 				EC8F9769136514D700D9C805 /* BlueLockAppDelegate.m */,
 				EC8F976B136514D800D9C805 /* MainMenu.xib */,
-				EC8F975D136514D700D9C805 /* Supporting Files */,
+				EC710132136548DA00729027 /* HIDIdleTime.m */,
+				EC710133136548DA00729027 /* HIDIdleTime.h */,
+				EC710134136548DA00729027 /* ScreenSaverControl.h */,
 				EC8F978A13651EF300D9C805 /* BLPreferencesController.h */,
 				EC8F978B13651EF300D9C805 /* BLPreferencesController.m */,
 				EC71012F1365481000729027 /* BLServiceController.h */,
 				EC7101301365481000729027 /* BLServiceController.m */,
+				EC8F975D136514D700D9C805 /* Supporting Files */,
 			);
 			path = BlueLock;
 			sourceTree = "<group>";
@@ -161,9 +164,6 @@
 				EC8F9763136514D700D9C805 /* main.m */,
 				EC8F9765136514D700D9C805 /* Credits.rtf */,
 				EC710123136524F400729027 /* BLPreferencesWindow.xib */,
-				EC710132136548DA00729027 /* HIDIdleTime.m */,
-				EC710133136548DA00729027 /* HIDIdleTime.h */,
-				EC710134136548DA00729027 /* ScreenSaverControl.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
