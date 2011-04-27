@@ -41,6 +41,12 @@
     } else {
         [enableOrDisable setTitle:@"Enable"];
     }
+    
+    if (!preferencesController) {
+        preferencesController = [[BLPreferencesController alloc] init];
+    }
+    
+    [preferencesController showWindow:self];
 }
 
 - (IBAction) changePreferences:(id) sender

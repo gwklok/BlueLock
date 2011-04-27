@@ -55,7 +55,7 @@
     IOBluetoothDevice *currentDevice;
     
     currentDevice = [servControl deviceOfInterest];
-    NSString *device_id;
+    NSString *device_id = nil;
     if (currentDevice != nil) {
         device_id = [[currentDevice getAddressString] uppercaseString];
     }
@@ -69,11 +69,10 @@
         NSString * deviceAddr = [[device getAddressString] uppercaseString];
         NSString * deviceName = [device getNameOrAddress];
         
-        [device retain];
         [currentDevices addObject:device];
         [devicePopup addItemWithTitle:deviceName];
         
-        if (device_id != NULL) {
+        if (device_id != nil) {
             if ([deviceAddr isEqualToString:device_id]) {
                 [devicePopup selectItemAtIndex:i];
             }
@@ -92,7 +91,8 @@
     }
     [self populateSelector];
     [secondsIndicator setIntegerValue:[servControl lockScreenAfterSecondsDisconnected]];
-    [super showWindow:sender];    
+    [window setLevel:kCGDesktopWindowLevel + 1];
+    [super showWindow:sender];
 }
 
 - (void)windowDidLoad
@@ -105,6 +105,7 @@
     [self populateSelector];
     [timeTillLockSlider setIntegerValue:[servControl lockScreenAfterSecondsDisconnected]];
     [secondsIndicator setIntegerValue:[servControl lockScreenAfterSecondsDisconnected]];
+    
 }
 
 - (IBAction)timeTillLockChanged:(id) sender

@@ -25,7 +25,7 @@
     [super init];
     
     if (self) {
-        lastDeviceConnect = [[NSDate alloc] init];
+        lastDeviceConnect = [NSDate date];
         [lastDeviceConnect retain];
         
         idleTimer = [[HIDIdleTime alloc] init];
@@ -42,9 +42,8 @@
                                     @"NO", @"currentlyRunning",
                                     @"00-21-36-ED-B5-21", @"deviceID",
                                     nil]];
-        [defaults retain];
         
-        NSString *device_id;
+        NSString *device_id = nil;
         lockScreenAfterSecondsDisconnected = 45;
         currentlyRunning = [defaults boolForKey:@"currentlyRunning"];
         device_id = [defaults stringForKey:@"deviceID"];
@@ -95,20 +94,22 @@
 {
     currentlyRunning = NO;
     [connectionThread cancel];
-    [defaults setDouble:NO forKey:@"currentlyRunning"];
+    [defaults setBool:NO forKey:@"currentlyRunning"];
     [defaults synchronize];
     
 }
 
 - (void)enable
 {
-    if (connectionThread == nil || [connectionThread isCancelled]) {
-        connectionThread = [[NSThread alloc] initWithTarget:self 
+    if (deviceOfInterest != nil) {
+        if (connectionThread == nil || [connectionThread isCancelled]) {
+            connectionThread = [[NSThread alloc] initWithTarget:self 
                                                    selector:@selector(threadSetup) object:nil];
-        [connectionThread start];
-        [defaults setDouble:YES forKey:@"currentlyRunning"];
-        [defaults synchronize];
-        currentlyRunning = YES;
+            [connectionThread start];
+            [defaults setBool:YES forKey:@"currentlyRunning"];
+            [defaults synchronize];
+            currentlyRunning = YES;
+        }
     }
 }
 
@@ -116,6 +117,9 @@
 {
     NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
     NSRunLoop * runloop = [NSRunLoop currentRunLoop];
+    
+    lastDeviceConnect = [NSDate date];
+    [lastDeviceConnect retain];
     
     timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)5
                                              target:self
@@ -138,32 +142,43 @@
     }
     
     if (![self check_connect]) {
-        // NSLog(@"not connected");
+#if defined (DEBUG)
+        NSLog(@"not connected");
+#endif
         if (lastDeviceConnect != nil) {
             NSTimeInterval timeInterval = [lastDeviceConnect timeIntervalSinceNow];
-            //NSLog([NSString stringWithFormat:@"Elapsed time: %f", timeInterval]);
-            //NSLog([NSString stringWithFormat:@"lockScreenAfterSecondsDisconnected: %ld",lockScreenAfterSecondsDisconnected]);
+#if defined (DEBUG)
+            NSLog([NSString stringWithFormat:@"Elapsed time: %f", timeInterval]);
+            NSLog([NSString stringWithFormat:@"lockScreenAfterSecondsDisconnected: %ld",lockScreenAfterSecondsDisconnected]);
+#endif
             if (![ssControl screenSaverIsRunning]) {
                 int idleTime = [idleTimer idleTimeInSeconds];
-                //NSLog (@"idle time in seconds: %i", idleTime);
-                
+#if defined (DEBUG)
+                NSLog (@"idle time in seconds: %i", idleTime);
+#endif                
                 if (fabs(timeInterval) > lockScreenAfterSecondsDisconnected) {
                     if (idleTime > lockScreenAfterSecondsDisconnected ) {
-                        //NSLog(@"Locking Screen");
+#if defined (DEBUG)
+                        NSLog(@"Locking Screen");
+#endif
                         [ssControl screenSaverStartNow];
                     } else {
-                        //NSLog(@"Would have locked screen but the user is still around");
+#if defined (DEBUG)
+                        NSLog(@"Would have locked screen but the user is still around");
+#endif
                     }
                 }
             }
         }
         
     } else {
+#if defined (DEBUG)
+        NSLog(@"connected");
+#endif
         if (lastDeviceConnect != nil) {
             [lastDeviceConnect release];
         }
-        
-        lastDeviceConnect = [[NSDate alloc] init];
+        lastDeviceConnect = [NSDate date];
         [lastDeviceConnect retain];
     }
 }
