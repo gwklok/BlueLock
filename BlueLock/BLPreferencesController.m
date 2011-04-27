@@ -50,34 +50,40 @@
 
 - (void)populateSelector
 {
-    int i;
-    NSArray * devices = [IOBluetoothDevice pairedDevices];
-    IOBluetoothDevice *currentDevice;
+    BluetoothHCIPowerState powerState;
+    IOBluetoothLocalDeviceGetPowerState(&powerState);
     
-    currentDevice = [servControl deviceOfInterest];
-    NSString *device_id = nil;
-    if (currentDevice != nil) {
-        device_id = [[currentDevice getAddressString] uppercaseString];
-    }
-    
-    [devicePopup removeAllItems];
-    [currentDevices removeAllObjects];
-    
-    //            
-    for (i = 0; i < [devices count]; i++) {
-        IOBluetoothDevice *device = [devices objectAtIndex:i];
-        NSString * deviceAddr = [[device getAddressString] uppercaseString];
-        NSString * deviceName = [device getNameOrAddress];
+    if(powerState != kBluetoothHCIPowerStateOFF) {
+        // do a bunch of bluetooth stuff ...
+        int i;
+        NSArray * devices = [IOBluetoothDevice pairedDevices];
+        IOBluetoothDevice *currentDevice;
         
-        [currentDevices addObject:device];
-        [devicePopup addItemWithTitle:deviceName];
-        
-        if (device_id != nil) {
-            if ([deviceAddr isEqualToString:device_id]) {
-                [devicePopup selectItemAtIndex:i];
-            }
+        currentDevice = [servControl deviceOfInterest];
+        NSString *device_id = nil;
+        if (currentDevice != nil) {
+            device_id = [[currentDevice getAddressString] uppercaseString];
         }
         
+        [devicePopup removeAllItems];
+        [currentDevices removeAllObjects];
+        
+        //            
+        for (i = 0; i < [devices count]; i++) {
+            IOBluetoothDevice *device = [devices objectAtIndex:i];
+            NSString * deviceAddr = [[device getAddressString] uppercaseString];
+            NSString * deviceName = [device getNameOrAddress];
+            
+            [currentDevices addObject:device];
+            [devicePopup addItemWithTitle:deviceName];
+            
+            if (device_id != nil) {
+                if ([deviceAddr isEqualToString:device_id]) {
+                    [devicePopup selectItemAtIndex:i];
+                }
+            }
+            
+        }
     }
 
 }

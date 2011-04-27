@@ -25,9 +25,6 @@
     [super init];
     
     if (self) {
-        lastDeviceConnect = [NSDate date];
-        [lastDeviceConnect retain];
-        
         idleTimer = [[HIDIdleTime alloc] init];
         [idleTimer retain];
         
@@ -40,7 +37,6 @@
         defaults = [NSUserDefaults standardUserDefaults];
         [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
                                     @"NO", @"currentlyRunning",
-                                    @"00-21-36-ED-B5-21", @"deviceID",
                                     nil]];
         
         NSString *device_id = nil;
@@ -115,7 +111,7 @@
 
 - (void)threadSetup
 {
-    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool* threadPool = [[NSAutoreleasePool alloc] init];
     NSRunLoop * runloop = [NSRunLoop currentRunLoop];
     
     lastDeviceConnect = [NSDate date];
@@ -126,9 +122,14 @@
                                            selector:@selector(handleTimer:)
                                            userInfo:nil
                                             repeats:YES];
-    [timer retain];
+    lastDeviceConnect = [NSDate date];
+    [lastDeviceConnect retain];
+    
+    //[timer retain];
     [runloop run];
-    [pool release];
+    
+    [timer release];
+    [threadPool release];
 }
 
 - (void)handleTimer:(NSTimer *)t
@@ -136,7 +137,7 @@
     
     if ([[NSThread currentThread] isCancelled]) {
         [timer invalidate];
-        [timer release];
+        [lastDeviceConnect release];
         timer = nil;
         [NSThread exit];
     }
