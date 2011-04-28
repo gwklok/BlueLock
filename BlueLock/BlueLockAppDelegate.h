@@ -31,6 +31,9 @@ BLServiceController *servControl;
 
 - (IBAction)changePreferences:(id) sender;
 - (IBAction) enableOrDisableAction:(id) sender;
+- (void)blServiceChange:(NSNotification *)notification;
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+- (void)menuSetup;
 
 @property (assign) IBOutlet NSWindow *window;
 

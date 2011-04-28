@@ -36,17 +36,15 @@
     [statusItem setHighlightMode:YES];
     servControl = [[BLServiceController alloc] init];
     [servControl retain];
-    if ([servControl isEnabled]) {
-        [enableOrDisable setTitle:@"Disable"];
-    } else {
-        [enableOrDisable setTitle:@"Enable"];
-    }
+    [statusMenu setAutoenablesItems:NO];
+    [self menuSetup];
     
     if (!preferencesController) {
         preferencesController = [[BLPreferencesController alloc] init];
     }
     
     [preferencesController showWindow:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(blServiceChange:) name:@"BLServiceStatusChange" object:nil];
 }
 
 - (IBAction) changePreferences:(id) sender
@@ -59,14 +57,39 @@
     
 }
 
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+    if (servControl != nil) {
+        if ([servControl couldRun]) {
+                return YES;
+        } else {
+            return NO;
+        }
+        return YES;
+    }
+    return NO;
+}
+
+- (void)menuSetup
+{
+    if ([servControl isEnabled]) {
+        [enableOrDisable setTitle:@"Disable"];
+    } else {
+        [enableOrDisable setTitle:@"Enable"];
+    }
+}
+
+- (void)blServiceChange:(NSNotification *)notification
+{
+    [self menuSetup];
+}
+
 - (IBAction) enableOrDisableAction:(id) sender
 {
     if ([servControl isEnabled]) {
         [servControl disable];
-        [enableOrDisable setTitle:@"Enable"];
     } else {
         [servControl enable];
-        [enableOrDisable setTitle:@"Disable"];
     }
 }
 

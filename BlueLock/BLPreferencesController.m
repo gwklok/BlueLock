@@ -27,14 +27,12 @@
     if (![super initWithWindowNibName:@"BLPreferencesWindow"])
         return nil;
     
-    if ([servControl isEnabled]) {
-        [onOffButton setTitle:@"On"];
-    } else {
-        [onOffButton setTitle:@"Off"];
-    }
+    [self menuSetup];
 
     currentDevices = [[NSMutableArray alloc] init];
     [currentDevices retain];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(blServiceChange:) name:@"BLServiceStatusChange" object:nil];
+    
     return self;
 }
 
@@ -54,7 +52,6 @@
     IOBluetoothLocalDeviceGetPowerState(&powerState);
     
     if(powerState != kBluetoothHCIPowerStateOFF) {
-        // do a bunch of bluetooth stuff ...
         int i;
         NSArray * devices = [IOBluetoothDevice pairedDevices];
         IOBluetoothDevice *currentDevice;
@@ -90,11 +87,7 @@
 
 - (IBAction)showWindow:(id)sender
 {
-    if ([servControl isEnabled]) {
-        [onOffButton setTitle:@"On"];
-    } else {
-        [onOffButton setTitle:@"Off"];
-    }
+    [self menuSetup];
     [self populateSelector];
     [secondsIndicator setIntegerValue:[servControl lockScreenAfterSecondsDisconnected]];
     [window setLevel:kCGDesktopWindowLevel + 1];
@@ -138,16 +131,33 @@
     }
 }
 
+- (void)blServiceChange:(NSNotification *)notification
+{
+    [self menuSetup];
+}
+
+- (void)menuSetup
+{
+    if ([servControl isEnabled]) {
+        [onOffButton setTitle:@"On"];
+    } else {
+        [onOffButton setTitle:@"Off"];
+    }
+    
+    if ([servControl couldRun]) {
+        [onOffButton setEnabled:YES];
+    } else {
+        [onOffButton setEnabled:NO];
+    }
+}
+
 - (IBAction)onOff:(id) sender
 {
     if ([servControl isEnabled]) {
-        [onOffButton setTitle:@"Off"];
         [servControl disable];
     } else {
-        [onOffButton setTitle:@"On"];
         [servControl enable];
     }
-
 }
 
 @end

@@ -32,15 +32,18 @@
     NSThread *connectionThread;
     NSUserDefaults *defaults;
 }
-
+// Private methods
 - (bool) check_connect;
 - (void)handleTimer:(NSTimer *)t;
-
 - (void)threadSetup;
+
+// Public methods
 - (void)enable;
 - (void)disable;
 - (bool)isEnabled;
-                     
+- (bool)couldRun;
+
+@property (readonly) BOOL isDeviceConnected;                     
 @property(copy) IOBluetoothDevice * deviceOfInterest;
 @property NSInteger lockScreenAfterSecondsDisconnected;
 

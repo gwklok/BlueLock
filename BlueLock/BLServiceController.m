@@ -54,11 +54,10 @@
             currentlyRunning = NO;
         } else {
             NSArray * devices = [IOBluetoothDevice pairedDevices];
-            int i;
             IOBluetoothDevice *targetDevice = nil;
             //            
-            for (i = 0; i < [devices count]; i++) {
-                IOBluetoothDevice *device = [devices objectAtIndex:i];
+            for (id devicesElement in devices) {
+                IOBluetoothDevice *device = devicesElement;
                 NSString * foo = [[device getAddressString] uppercaseString];
                         
                 if ([foo isEqualToString:device_id]) {
@@ -92,7 +91,7 @@
     [connectionThread cancel];
     [defaults setBool:NO forKey:@"currentlyRunning"];
     [defaults synchronize];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BLServiceStatusChange" object:self];
 }
 
 - (void)enable
@@ -106,7 +105,20 @@
             [defaults synchronize];
             currentlyRunning = YES;
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"BLServiceStatusChange" object:self];
     }
+}
+
+- (bool)isEnabled
+{
+    return currentlyRunning;
+}
+
+- (bool)couldRun
+{
+    if (deviceOfInterest == nil)
+        return NO;
+    return YES;
 }
 
 - (void)threadSetup
@@ -193,9 +205,15 @@
     return FALSE;
 }
 
-- (bool)isEnabled
+- (bool) isDeviceConnected
 {
-    return currentlyRunning;
+    if (currentlyRunning) {
+        NSTimeInterval timeInterval = [lastDeviceConnect timeIntervalSinceNow];
+        if (timeInterval < 60) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)setDeviceOfInterest:(IOBluetoothDevice *)device

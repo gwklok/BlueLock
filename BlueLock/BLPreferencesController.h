@@ -32,5 +32,7 @@
 - (IBAction)addDevice:(id) sender;
 - (void)populateSelector;
 - (IBAction)timeTillLockChanged:(id) sender;
+- (void)blServiceChange:(NSNotification *)notification;
+- (void)menuSetup;
 
 @end
